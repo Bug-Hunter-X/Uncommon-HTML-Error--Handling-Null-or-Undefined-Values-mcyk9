@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv">This is some content inside myDiv.</div>
+
+  <script>
+    // Solution 1: Check if the element exists before accessing its properties
+    const element = document.getElementById('myDiv');
+    if (element) {
+      console.log(element.innerHTML);
+    } else {
+      console.log('Element not found!');
+    }
+
+    //Solution 2: Add an event listener that fires after the page has loaded completely
+    window.addEventListener('load', function(){
+        let myDivContent = document.getElementById('myDiv').textContent;
+        console.log(myDivContent);
+    })
+  </script>
+</body>
+</html>
